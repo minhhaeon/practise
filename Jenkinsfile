@@ -7,7 +7,7 @@ pipeline {
         cc = """${
           sh(
             returnStdout: true,
-            script: 'echo "Hi $name"'
+            script: 'echo "Hi Ha Thien Minh"'
           )
         }
         """
