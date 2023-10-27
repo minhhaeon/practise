@@ -1,5 +1,7 @@
 pipeline {
-  agent controller
+  agent {
+    label 'controller'
+  }
   stages {
     stage('build') {
       agent {
