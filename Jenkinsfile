@@ -1,6 +1,10 @@
 pipeline {
-  agent controller {
-    docker {image 'node:18.18.2-alpine3.18'}
+  agent {
+    label 'controller'
+    docker {
+      image 'node:18.18.2-alpine3.18'
+      reuseNode: true
+    }
   }
   stages {
     stage('build') {
