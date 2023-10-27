@@ -1,12 +1,13 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:18.18.2-alpine3.18'
-      reuseNode: true
-    }
-  }
+  agent controller
   stages {
     stage('build') {
+      agent {
+        docker {
+          image 'node:18.18.2-alpine3.18'
+          reuseNode: true
+        }
+      }
       environment {
         name = 'Minh Ha'
         cc = """${
