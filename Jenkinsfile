@@ -7,8 +7,7 @@ pipeline {
       agent {
         docker {
           image 'node:18.18.2-alpine3.18'
-          reuseNode: true
-        }
+          reuseNode true}
       }
       environment {
         name = 'Minh Ha'
