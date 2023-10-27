@@ -1,5 +1,7 @@
 pipeline {
-  agent any
+  agent {
+    docker {image 'node:18.18.2-alpine3.18'}
+  }
   stages {
     stage('build') {
       environment {
@@ -21,6 +23,7 @@ pipeline {
       }
       steps {
         sh 'echo "Hello $cc"'
+        sh 'node --version'
       }
     }
     stage('build-next'){
